@@ -1,0 +1,72 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+main{
+    height: 100vh;
+    background-color: lightgray;
+    padding: 100px;
+}
+
+.container-app{
+    width: 80%;
+    height: 800px;
+    margin: 0 auto;
+    display: flex;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.contacts-container{
+    width: 30%;
+    border: 1px solid green;
+}
+
+.chat-container{
+    width: 70%;
+    border: 1px solid yellow;
+}
+
+.user{
+    height: 5%;
+    background-color: blanchedalmond;
+}
+
+.notification{
+    height: 5%;
+    background-color: #8edafc;
+}
+
+.search{
+    height: 5%;
+    background-color: grey;
+}
+
+.contacts{
+    overflow-y: scroll;
+    height: 85%;
+}
+
+.one-contact{
+    height: 75px;
+    background-color: aqua;
+}
+
+.chat-contact{
+    height: 5%;
+    background-color: blanchedalmond;
+}
+
+.chat{
+    height: 85%;
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+.type{
+    height: 10%;
+}
