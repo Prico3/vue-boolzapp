@@ -117,9 +117,30 @@ img.avatar {
 
 /* NOTIFICATIONS */
 .notifications {
-    height: 60px;
     width: 100%;
-    background-color: pink;
+    background-color: var(--disclaimer-bg-color);
+    display: flex;
+    padding: 0.5rem;
+}
+
+.notifications__icon{
+    color: var(--disclaimer-bg-color);
+    border-radius: 50%;
+}
+
+.notifications__icon i{
+    background-color: white;
+    padding: 0.7rem;
+    border-radius: 50%;
+}
+
+.notifications__text{
+    margin-left: 0.3rem;
+}
+
+.notifications__text a{
+    color: var(--disclaimer-link-color);
+    font-size: small;
 }
 
 /* SEARCH */
@@ -222,5 +243,20 @@ img.avatar {
 .new-message {
     height: 70px;
     width: 100%;
-    background-color: lightgray;
+    background-color:var(--footer-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
+
+.new-message input{
+    width: 80%;
+    height: 40px;
+}
+
+.new-message i{
+    color: var(--icons-color);
+    font-size: 1.2rem;
+}
+

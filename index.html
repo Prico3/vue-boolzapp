@@ -35,7 +35,7 @@
             <div class="header__user">
               <img class="avatar" src="img/avatar_io.jpg" alt="User avatar" />
               <div class="header__text">
-                <h3>Olga</h3>
+                <h3>Silvia</h3>
               </div>
             </div>
             <div class="header__actions">
@@ -47,7 +47,15 @@
           <!-- /col header -->
 
           <!-- Notifications -->
-          <section class="notifications"></section>
+          <section class="notifications">
+            <div class="notifications__icon">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+            <div class="notifications__text">
+              <p>Ricevi notifiche di nuovi messaggi</p>
+              <a href="">Attiva notifiche desktop</a>
+            </div>
+          </section>
           <!-- /Notifications -->
 
           <!-- Search -->
@@ -57,7 +65,7 @@
                 <span class="sr-only">Inizia la ricerca</span>
                 <i class="fa fa-search" aria-hidden="true"></i>
               </label>
-              <input type="text" class="search__input" id="search-input" />
+              <input type="text" class="search__input" id="search-input" placeholder="Cerca o inizia una nuova chat" />
             </div>
           </section>
           <!-- /Search -->
@@ -94,7 +102,8 @@
           <!-- col header -->
           <header class="header">
             <div class="header__user">
-              <img class="avatar" :src="`img/avatar${contacts[activeContact].avatar}.jpg`" alt="User avatar" />
+              <img class="avatar" 
+              :src="`img/avatar${contacts[activeContact].avatar}.jpg`" alt="User avatar" />
               <div class="header__text">
                 <h3>{{ contacts[activeContact].name }}</h3>
                 <p>Ultimo accesso</p>
@@ -139,7 +148,12 @@
           <!-- /Messages -->
 
           <!-- New message -->
-          <footer class="new-message"></footer>
+          <footer class="new-message">
+            <i class="fa-regular fa-face-smile"></i>
+            <input type="text" id="type-messagge" placeholder="Scrivi un messaggio">
+            <i class="fa-solid fa-microphone"></i>
+
+          </footer>
           <!-- /New message -->
         </div>
         <!-- /Right col main -->
