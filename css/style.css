@@ -186,6 +186,10 @@ img.avatar {
     padding: .5rem 1rem;
 }
 
+.contact:hover{
+    cursor: pointer;
+}
+
 .contact:not(:last-child) {
     border-bottom: 1px solid gray;
 }
@@ -195,7 +199,6 @@ img.avatar {
     justify-content: space-between;
     flex-grow: 1;
 }
-
 
 /* MESSAGES */
 .messages-section {

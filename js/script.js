@@ -5,6 +5,7 @@ createApp({
   data() {
     return {
       activeContact: 0,
+      newMessage: "",
       contacts: [
           {
             name: 'Michele',
@@ -171,14 +172,40 @@ createApp({
         ],
     };
   },
-  created() {
-    const now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-    console.log(now);
-  },
+  
 
   methods:{
+    // funzione che permette di visualizzare al click il contatto selezionato
+    //INDEX MOLTO IMPORTANTE
     changeContact(index){
       this.activeContact = index;
-    }
+    },
+
+    // funzione che permette di aggiungere un nuovo messaggio tramite l'input
+    addMessage(){
+      const bot = this.activeContact;
+      // Se il messaggio non è una stringa vuota
+      if (this.newMessage !== ""){
+        //accedo ai messaggi del contatto
+        const messageArray = this.contacts[this.activeContact].messages;
+        //quindi creo un nuovo messaggio
+        const newMex = {
+          date: '',
+          message: this.newMessage,
+          status: 'sent'
+        };
+        //pusho ul nuovo messaggio nell'array dei messaggi
+        messageArray.push(newMex)
+        //infine svuoto l'input
+        this.newMessage= '';
+      }
+    },
+
+    generateDateTime() {
+      return dt
+        .now()
+        .setLocale("it")
+        .toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
+    },
   }
 }).mount("#app");
