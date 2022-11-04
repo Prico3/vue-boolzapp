@@ -190,7 +190,7 @@ createApp({
         const messageArray = this.contacts[this.activeContact].messages;
         //quindi creo un nuovo messaggio
         const newMex = {
-          date: '',
+          date: this.generateDateTime,
           message: this.newMessage,
           status: 'sent'
         };
@@ -198,7 +198,19 @@ createApp({
         messageArray.push(newMex)
         //infine svuoto l'input
         this.newMessage= '';
-      }
+
+        
+        //funzione che crea un messaggio di risposta
+        //ARROW FUNCTION
+        setTimeout(() => {
+          const newMex = {
+            date: this.generateDateTime(),
+            message: "ok",
+            status: "received",
+          };
+          this.contacts[bot].messages.push(newMex);
+        }, 1000);
+      };
     },
 
     generateDateTime() {
@@ -207,5 +219,6 @@ createApp({
         .setLocale("it")
         .toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
     },
+
   }
 }).mount("#app");
