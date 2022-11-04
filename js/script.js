@@ -174,5 +174,11 @@ createApp({
   created() {
     const now = dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
     console.log(now);
+  },
+
+  methods:{
+    changeContact(index){
+      this.activeContact = index;
+    }
   }
 }).mount("#app");

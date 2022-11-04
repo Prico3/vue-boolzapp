@@ -73,12 +73,13 @@
           <!-- Contacts list -->
           <section class="contacts-list">
             <!-- Contact item -->
-            <div class="contact" v-for="contact in contacts">
+            <div class="contact" v-for="(contact, index) in contacts"  @click="changeContact(index)">
               <div class="contact__image">
                 <img
                   class="avatar"
                   :src="`img/avatar${contact.avatar}.jpg`"
                   :alt="contact.name"
+                 
                 />
               </div>
               <div class="contact__text">
@@ -120,23 +121,13 @@
           <!-- Messages -->
           <section class="messages-section">
             <!-- Single Message -->
-            <div class="message message--sent">
+            <div 
+            v-for="(item, index) in contacts[activeContact].messages"
+            class="message"
+            :class="`message--${item.status}`">
               <div class="message__box">
                 <div class="message__text">
-                  Ciao, come stai?
-                </div>
-                <div class="message__time">
-                  <small> 12:00 </small>
-                </div>
-              </div>
-            </div>
-            <!-- /Single Message -->
-
-            <!-- Single Message -->
-            <div class="message message--recieved">
-              <div class="message__box">
-                <div class="message__text">
-                  Ciao, come stai?
+                  {{ item.message }}
                 </div>
                 <div class="message__time">
                   <small> 12:00 </small>
