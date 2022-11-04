@@ -190,7 +190,7 @@ createApp({
         const messageArray = this.contacts[this.activeContact].messages;
         //quindi creo un nuovo messaggio
         const newMex = {
-          date: this.generateDateTime,
+          date: this.generateDateTime(),
           message: this.newMessage,
           status: 'sent'
         };
